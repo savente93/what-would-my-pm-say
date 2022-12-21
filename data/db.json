@@ -1,0 +1,38 @@
+{
+    "historical_questions": [
+      {
+         "response_id": 1,
+         "question": "I really hate planning epics why do you do this to me?",
+         "answer": "have you made a ticket for that?",
+         "author": "Sam",
+         "upvotes": 0
+      },
+      {
+        "response_id": 2,
+        "question": "I'm feeling really sick, and I don't think I'll be able to finish my sprint goals.",
+        "answer": "That's not a priority right now.",
+        "author": "Johanna",
+        "upvotes": 0
+     },
+     {
+        "response_id": 3,
+        "question": "Cormac, *snaps fingers* DRINKS!",
+        "answer": "Can you make that more concrete?",
+        "author": "Neha",
+        "upvotes": 0
+     },
+     {
+      "response_id": 4,
+      "question": "Help, I'm stuck in a project facotry!",
+      "answer": "How does that impact the customer?",
+      "author": "Cormac",
+      "upvotes": 0
+   }
+    ],
+    "responses":[
+        "Have you made a ticket for that?",
+        "I think we're getting off topic",
+        "Can you make that more concrete?",
+        "That's not a priority right now."
+    ]
+ }
