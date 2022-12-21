@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./Home";
+import Ask from "./Ask";
+import History from "./History";
+import Banner from "./Banner";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ResponseDetails from "./ResponseDetails";
 
 function App() {
+  const title = "What would my PM say?";
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Banner />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/ask" element={<Ask />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/details/:id" element={<ResponseDetails />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
