@@ -7,8 +7,7 @@ const HistoricalQuestions = ({ history }) => {
         {history.map((response) => (
           <li key={response.response_id}>
             <Link to={"/details/" + response.response_id}>
-              Q: {response.question}
-              <br />
+              Q: {response.question} <br />
               A: {response.answer}
             </Link>{" "}
           </li>

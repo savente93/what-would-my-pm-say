@@ -32,14 +32,18 @@ nav a {
   border: #506460 .1rem solid;
   border-bottom: 0;
   padding: 1rem;
+  text-decoration: none;
 }
 
-.HistoricalQuestions{
+.HistoricalQuestions a{
   line-height: 1.2em;
+  text-decoration: none;
 }
 
 .HistoricalQuestions li {
   margin-top: 1.5em;
+  border:#506460 .1rem solid;
+  padding: .5rem;
 }
 
 
