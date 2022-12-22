@@ -5,13 +5,7 @@ const History = () => {
   const [sortAsc, setSortAsc] = useState(true);
   const [evenUpvotePostsOnly, setEvenUpvotePostsOnly] = useState(false);
 
-  const toggleSorting = () => {
-    if (sortAsc) {
-      setSortAsc(false);
-    } else {
-      setSortAsc(true);
-    }
-  };
+  const toggleSorting = () => setSortAsc(!sortAsc);
 
   const toggleEvenUpvotePostsOnly = () => {
     if (evenUpvotePostsOnly) {
