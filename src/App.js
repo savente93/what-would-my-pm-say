@@ -3,7 +3,6 @@ import Ask from "./Ask";
 import History from "./History";
 import Banner from "./Banner";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ResponseDetails from "./ResponseDetails";
 
 function App() {
   const title = "What would my PM say?";
@@ -15,7 +14,6 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/ask" element={<Ask />} />
           <Route path="/history" element={<History />} />
-          <Route path="/details/:id" element={<ResponseDetails />} />
         </Routes>
       </Router>
     </div>

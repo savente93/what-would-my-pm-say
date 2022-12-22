@@ -18,28 +18,35 @@ const Ask = () => {
         "Content-Type": "application/json",
       },
       body: body,
-    }).then(() => console.log("question submited"));
+    });
 
-    const randomResponseIndex = Math.ceil(Math.random() * responses.length);
-    const response = responses[randomResponseIndex];
-    alert("Q: " + question + "\n" + "A: " + response);
+    if (question) {
+      const randomResponseIndex = Math.floor(Math.random() * responses.length);
+      const response = responses[randomResponseIndex];
+      alert("Q: " + question + "\n" + "A: " + response);
+    } else {
+      alert("Please input a question.");
+    }
   };
 
   return (
-    <main>
-      Please input your question:
-      <br />
+    <main className="Ask">
+      <h3>Please input your question: </h3>
+
       <form onSubmit={handleSubmit}>
-        <textarea
-          name="question"
-          id="main-question"
-          cols="30"
-          rows="10"
-          value={question}
-          onChange={(ev) => setQuestion(ev.target.value)}
-        ></textarea>
-        <br />
-        <button>What would my PM say?</button>
+        <p>
+          <textarea
+            name="question"
+            id="main-question"
+            cols="30"
+            rows="10"
+            value={question}
+            onChange={(ev) => setQuestion(ev.target.value)}
+          ></textarea>
+        </p>
+        <p>
+          <button>What would my PM say?</button>
+        </p>
       </form>
     </main>
   );

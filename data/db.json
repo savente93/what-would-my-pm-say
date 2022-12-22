@@ -1,38 +1,97 @@
 {
-    "historical_questions": [
-      {
-         "response_id": 1,
-         "question": "I really hate planning epics why do you do this to me?",
-         "answer": "have you made a ticket for that?",
-         "author": "Sam",
-         "upvotes": 0
-      },
-      {
-        "response_id": 2,
-        "question": "I'm feeling really sick, and I don't think I'll be able to finish my sprint goals.",
-        "answer": "That's not a priority right now.",
-        "author": "Johanna",
-        "upvotes": 0
-     },
-     {
-        "response_id": 3,
-        "question": "Cormac, *snaps fingers* DRINKS!",
-        "answer": "Can you make that more concrete?",
-        "author": "Neha",
-        "upvotes": 0
-     },
-     {
-      "response_id": 4,
+  "historical_questions": [
+    {
+      "id": 1,
+      "question": "I really hate planning epics why do you do this to me?",
+      "answer": "have you made a ticket for that?",
+      "upvotes": 8
+    },
+    {
+      "id": 2,
+      "question": "I'm feeling really sick, and I don't think I'll be able to finish my sprint goals.",
+      "answer": "That's not a priority right now.",
+
+      "upvotes": 1
+    },
+    {
+      "id": 3,
+      "question": "Cormac, *snaps fingers* DRINKS!",
+      "answer": "Can you make that more concrete?",
+      "upvotes": 3
+    },
+    {
+      "id": 4,
       "question": "Help, I'm stuck in a project facotry!",
       "answer": "How does that impact the customer?",
-      "author": "Cormac",
-      "upvotes": 0
-   }
-    ],
-    "responses":[
-        "Have you made a ticket for that?",
-        "I think we're getting off topic",
-        "Can you make that more concrete?",
-        "That's not a priority right now."
-    ]
- }
+      "upvotes": 2
+    }
+  ],
+  "responses": [
+    "Have you made a ticket for that?",
+    "I think we're getting off topic",
+    "Can you make that more concrete?",
+    "That's not a priority right now."
+  ],
+  "ask": [
+    {
+      "id": 0,
+      "question": "I'm feeling really sick, and I don't think I'll be able to finish my sprint goals."
+    },
+    {
+      "id": 1,
+      "question": "Help, I'm stuck in a project facotry!"
+    },
+    {
+      "question": "",
+      "id": 2
+    },
+    {
+      "question": "",
+      "id": 3
+    },
+    {
+      "question": "",
+      "id": 4
+    },
+    {
+      "question": "",
+      "id": 5
+    },
+    {
+      "question": "asdf",
+      "id": 6
+    },
+    {
+      "question": "   ",
+      "id": 7
+    },
+    {
+      "question": "",
+      "id": 8
+    },
+    {
+      "question": "   ",
+      "id": 9
+    },
+    {
+      "question": "   ",
+      "id": 10
+    },
+    {
+      "question": "   ",
+      "id": 11
+    },
+    {
+      "question": "   ",
+      "id": 12
+    },
+    {
+      "question": "   ",
+      "id": 13
+    },
+    {
+      "question": "   ",
+      "id": 14
+    }
+  ]
+}
