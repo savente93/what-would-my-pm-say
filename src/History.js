@@ -1,6 +1,6 @@
 import useFetch from "./useFetch";
 import Response from "./Response";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 const History = () => {
   const [sortAsc, setSortAsc] = useState(true);
   const [evenUpvotePostsOnly, setEvenUpvotePostsOnly] = useState(false);
@@ -9,6 +9,14 @@ const History = () => {
 
   const toggleEvenUpvotePostsOnly = () =>
     setEvenUpvotePostsOnly(!evenUpvotePostsOnly);
+
+  const updateVote = (id, vote) => {
+    historicalQuestions.map((question) => {
+      if (question.id === id) {
+        question.votes = vote;
+      }
+    })
+  }
 
   const {
     data: historicalQuestions,
@@ -42,7 +50,7 @@ const History = () => {
             })
             .map((response) => (
               <li key={response.id}>
-                <Response response={response} />
+                <Response response={response} updateVote={updateVote} />
               </li>
             ))}
         </ol>

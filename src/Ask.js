@@ -1,32 +1,29 @@
-import { useEffect, useState } from "react";
-import useFetch from "./useFetch";
+import {useEffect, useState} from "react";
 
 const Ask = () => {
   const [question, setQuestion] = useState("");
-  const {
-    data: responses,
-    isLoading,
-    error,
-  } = useFetch("http://localhost:8000/responses");
+  const [answer, setAnswer] = useState("");
+
+  useEffect(() => {
+    if (answer) {
+      setAnswer("")
+    }
+  }, [question])
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    const body = JSON.stringify({ question });
-    fetch("http://localhost:8000/ask", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: body,
-    });
-
-    if (question) {
-      const randomResponseIndex = Math.floor(Math.random() * responses.length);
-      const response = responses[randomResponseIndex];
-      alert("Q: " + question + "\n" + "A: " + response);
-    } else {
+    if (!question) {
       alert("Please input a question.");
+      return;
     }
+    const body = JSON.stringify({ question });
+    fetch("http://localhost:8080/questions/", {
+      method: "POST",
+      body: body,
+    }).then(r => r.json()).then(data => {
+      setAnswer(data['data'].answer);
+      return data['data'].answer;
+    }).then(a => alert("Q: " + question + "\nA: " + a)).catch((err) => console.log(err));
   };
 
   return (
@@ -47,6 +44,7 @@ const Ask = () => {
         <p>
           <button>What would my PM say?</button>
         </p>
+        { question && answer && <p>To the question "{question}" your PM would answer: {answer} Thus I have spoketh!!! </p>}
       </form>
     </main>
   );
