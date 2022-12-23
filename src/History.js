@@ -1,45 +1,41 @@
 import useFetch from "./useFetch";
 import Response from "./Response";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const History = () => {
   const [sortAsc, setSortAsc] = useState(true);
   const [evenUpvotePostsOnly, setEvenUpvotePostsOnly] = useState(false);
 
   const toggleSorting = () => setSortAsc(!sortAsc);
 
-  const toggleEvenUpvotePostsOnly = () => {
-    if (evenUpvotePostsOnly) {
-      setEvenUpvotePostsOnly(false);
-    } else {
-      setEvenUpvotePostsOnly(true);
-    }
-  };
+  const toggleEvenUpvotePostsOnly = () =>
+    setEvenUpvotePostsOnly(!evenUpvotePostsOnly);
 
   const {
     data: historicalQuestions,
     isPending: isHistoryLoading,
     error: historyLoadingError,
-  } = useFetch("http://localhost:8000/historical_questions");
+  } = useFetch("http://localhost:8080/questions/");
+
   return (
     <div className="History">
       <button onClick={toggleSorting}>Reverse Sorting</button>
       <button onClick={toggleEvenUpvotePostsOnly}>
-        Tobble displaying only posts with even upvotes
+        Toggle displaying only posts with even up votes
       </button>
       {isHistoryLoading && <div> Loading...</div>}
-      {historicalQuestions && (
+       {historicalQuestions && (
         <ol>
           {historicalQuestions
             .sort((a, b) => {
               if (sortAsc) {
-                return b.upvotes - a.upvotes;
+                return b.votes - a.votes;
               } else {
-                return a.upvotes - b.upvotes;
+                return a.votes - b.votes;
               }
             })
             .filter((resp) => {
               if (evenUpvotePostsOnly === true) {
-                return resp.upvotes % 2 === 0;
+                return resp.votes % 2 === 0;
               } else {
                 return true;
               }

@@ -7,7 +7,7 @@ const Response = ({ response }) => {
     newResponse.upvotes += 1;
     const body = JSON.stringify(newResponse);
     console.log(body);
-    fetch("http://localhost:8000/historical_questions", {
+    fetch("http://localhost:8080/questions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +23,7 @@ const Response = ({ response }) => {
       A: {response.answer} <br />{" "}
       <form onSubmit={handleSubmit}>
         <button>
-          <BiUpvote /> {response.upvotes}
+          <BiUpvote /> {response.votes}
         </button>
       </form>
     </div>

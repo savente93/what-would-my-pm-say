@@ -4,25 +4,25 @@
       "id": 1,
       "question": "I really hate planning epics why do you do this to me?",
       "answer": "have you made a ticket for that?",
-      "upvotes": 8
+      "votes": 8
     },
     {
       "id": 2,
       "question": "I'm feeling really sick, and I don't think I'll be able to finish my sprint goals.",
       "answer": "That's not a priority right now.",
-      "upvotes": 1
+      "votes": 1
     },
     {
       "id": 3,
       "question": "Cormac, *snaps fingers* DRINKS!",
       "answer": "Can you make that more concrete?",
-      "upvotes": 3
+      "votes": 3
     },
     {
       "id": 4,
       "question": "Help, I'm stuck in a project facotry!",
       "answer": "How does that impact the customer?",
-      "upvotes": 2
+      "votes": 2
     }
   ],
   "responses": [
@@ -39,6 +39,14 @@
     {
       "id": 1,
       "question": "Help, I'm stuck in a project facotry!"
+    },
+    {
+      "question": "",
+      "id": 2
+    },
+    {
+      "question": "sdfg",
+      "id": 3
     }
   ]
 }
